@@ -1,9 +1,14 @@
 package palindrome
 
-func IsPalindrome(str string) bool {
-	lastIdx := len(str) - 1
-	for i := 0; i < lastIdx/2 && i < (lastIdx-i); i++ {
-		if str[i] != str[lastIdx-i] {
+import (
+	"strings"
+)
+
+func IsPalindrome(value string) bool {
+	value = strings.ToLower(value)
+	lastIndex := len(value) - 1
+	for i := 0; i < lastIndex/2 && i < (lastIndex-i); i++ {
+		if value[i] != value[lastIndex-i] {
 			return false
 		}
 	}
